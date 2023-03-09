@@ -36,7 +36,7 @@ jobs:
           neofetch
           curl amogus.ar | cat
           git config -l
-          git config --global -l
+          #git config --global -l
           sudo add-apt-repository ppa:ytvwld/asciiquarium
           sudo apt-get -qq update && sudo apt-get -qq install asciiquarium
           timeout 5 asciiquarium
