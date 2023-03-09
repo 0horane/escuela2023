@@ -39,5 +39,5 @@ jobs:
           #git config --global -l
           sudo add-apt-repository ppa:ytvwld/asciiquarium
           sudo apt-get -qq update && sudo apt-get -qq install asciiquarium
-          timeout 5 asciiquarium
+          timeout 5 tmux -c asciiquarium
           shutdown now
