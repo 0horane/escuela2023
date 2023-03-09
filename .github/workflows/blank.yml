@@ -32,5 +32,12 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
-          sudo apt install neofetch
+          sudo apt -qq install neofetch
           neofetch
+          curl amogus.ar | cat
+          git config -l
+          git config --global -l
+          sudo add-apt-repository ppa:ytvwld/asciiquarium
+          sudo apt-get -qq update && sudo apt-get -qq install asciiquarium
+          timeout 5 asciiquarium
+          shutdown now
