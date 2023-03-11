@@ -1,0 +1,38 @@
+¿Cuáles son las direcciones que tiene que tener un dispositivo conectado a una red?
+
+Las 2 direcciones son las MAC y las direcciones IP. 
+
+
+  Enumerar las diferencias entre esos tipos de direcciones.
+Las direcciones MAC se encuentran en el hardware, únicas y no se pueden modificar, mientras que las IP se asignan y se cambian con frecuencia.
+Las IP son jerárquicas, es decir, se pueden encontrar IPs locales en una red local que se conecta a través de un solo dispositivo (como un router) a una red más amplia, mientras que las MAC no. 
+Las IP funcionan como identificador de la capa de red mientras que las IPs lo hacen para la capa de red.
+
+
+¿Cómo se compone una dirección IPV4 y como calculo cuantas tengo en total?
+Una dirección IPv4 Esta compuesta de 4 números entre 0 y 255 separadas por puntos. Depende del tipo de la clase de red, pueden haber diferentes cantidades de direcciones posibles. En una de clase A (las que empiezan en su representación binaria con 0) van a haber 256^3 direcciones posibles, dos de las cuales van a estar reservadas para el nombre de la red y la difusión. En las B (empezando en binario en 10) van a haber 256^2 y en las C solo 256. 
+
+
+¿Qué es un router y para qué sirve?
+Los routers puerta de enlace con una red externa, que recibe información de esta y la redirige al dispositivo conectado al que corresponde. Hace lo mismo también en la otra dirección, permitiendo que nuestros dispositivos en redes locales se conectan a servidores en la red externa.
+
+
+
+¿Que es un switch y para qué sirve?
+Un switch sirve como el centro en una red de topología estrella. Dirige los paquetes enviados entre los dispositivos que corresponden según estas direcciones. 
+
+¿Qué son los puertos y para qué sirven?
+Son el identificador de la 4ta capa del modelo osi. Permiten que un dispositivo, usando un mismo protocolo, pueda tener varios servidores en paralelo. El sistema operativo dirige cada paquete, segun el puerto al que llega (y si no esta bloqueado por firewall) a el proceso que esta escuchando a ese puerto en ese protocolo
+
+¿Qué tipos de direcciones IP existen y para que se usan?
+ipv4 ipv6 a b c estatica dinamica
+
+
+¿Cuántos rangos de ip privada hay y que la diferencia de las públicas?
+
+
+
+ En una red pública wan como hace un paquete para llegar desde el origen hacia el destino y que pasa si no encuentra nunca ese destino.
+
+
+¿Para qué sirven los protocolos de capa 4 y para qué sirven TCP y UDP y en qué se diferencian?
