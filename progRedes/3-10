@@ -1,0 +1,72 @@
+## caracteristicas de las MAC:
+ - unica, 
+ - no define conjuntos (no jerarquica), 
+ - fabricante define mitad
+ - identificador de capa 2
+
+Cosas impoertantes en un protocolo
+Que los datos sean exactamente como los mandaste
+
+## TCP
+
+ACK: paquete de verificacion de TCP
+### problemas:
+ - paquetes cortados (para poder dividir)
+ - tarda mucho tiempo la verificación (hay que esperar que vuelva positivo el ACK)
+ - Connection Oriented
+ - Necesitan coneccion previa con IP (capa 3) y puerto (capa 4)
+
+### solución: Ventana
+Se envian paquetes y se van recibiendo ACKs. Se elije una ventana de cierta cantidad de paquetes que se pueden mandar antes de que llegue la confirmacion (acknowledge)
+
+## UDP 
+ - Solo le importa la velocidad
+ - No valida que los datos sigan en su manera original.  
+ - Connectionless
+ - Generalmente unidireccional
+  
+ej minecraft:  
+arma concecciones TCP entre cliente y servidor
+
+Well known ports (0-1024)
+de protocolos conocidos (requieren admin)
+
+## Como funcionan servidores
+ 1. Llama listen (bloqueante)
+ 2. Hace un fork en otro thread con una funcion que responde y le asigna esa conección
+ 3. Vuelve al paso 1
+
+Usa IPC (inter process communication) para que los hilos hablen entre si
+si necesita mas que una minima comunicacion se usan procesos diferentes en vez de threads.
+
+ps aux
+ps tri (te de el padre de cada proceso.)
+
+procesos zombi si no se detiene antes de que se muera el padre (lo mata init??)
+
+## Servidores y conneciónes
+port forward: redireccion del router a una computadora donde esta el servidor
+
+### TTL 
+(en el IPV4)  
+Time to leave: La cantidad de saltos que puede saltar en una wan antes de que de muera  
+Es necesario por si se entra en un ciclo. Puede que un usuario mienta y ponga un numero muy alto ahí, pero eso (igual que el mac spoofing) ya esta mas que solcuionado por diferentes metodos, firewalls, etc.
+
+
+Modo promiscuo (ej en linux) (recibis todos los paquetes del cable y no solo los que estan asignados en tu IP)
+
+cross splitting:  
+copiar cookies/ sesion/ lo que sea y lo copia a otra sesion
+
+TNS / SQL injection
+... ni lo tengo que explicar esto
+  
+todo esto de los exploits viene de la pregunta que hice sobre lo de alto TTL pero bueno. 
+
+Web scraping
+http: get/post/put
+muchos requests
+
+DNS nomain name service
+permite averiguar el ip correspondiente en un servidor
+
