@@ -1,0 +1,78 @@
+# Requerimientos
+
+### indigacion
+
+
+
+### Problema de entendimiento:
+Los clienets no se pueden comunicar, especifican requerimientos en conflictos con otros, o requerimientos ambiguos, no saben lo que necesitan, no entienden el dominio del problema]
+
+### Problema de volatilidad
+Se agregan requerimientos despues de que ya se empezo 
+
+## Elaboracion
+La info de las etapas anteriores proveniented de clientes se convierten ene un modelo refinado sobre el comportamiento, informacion, etc sobre el soft
+
+## NEgociacion
+Arreglar los prioblemas cuando los clienets tienen requerimientos conflictivs
+
+Se piden que se organizen por prioridad a los conflictos, y se enfrentan con conflictos internos. Se modfiican, combinan, eliminan  reqs para solucionar
+
+## Especificacion
+
+## Validacion
+Se aseguran que todos los requerimientos son claros, no ambuiguos, consistentes, sin errores, y con las estandares de calidad necesarisas
+
+
+
+
+# Proceso:
+
+## Pre indagacion
+Hacemos preguntas simples sobre el ambbiente para entender.
+
+## Indagacion
+Se hacen preguntas. Se escriben una o 2 paginas de solicitud de producto
+
+## Despliegue de funciion de calidad
+Se desplieguan los valores de los clientes
+
+Requerimientos
+Normales: Objetivos o metas definidaos con los clientes (tipos de graficos, funciones del sistema, nivel de rendmiento)
+
+Esperados: No los mencionan los clientes, peo para ellos quedan por entendido. Debemos darnos cuenta que existen
+
+Emocionantes: Mas alla de las expectativas, y muy satisfactorias.
+
+
+DFC al final se hace una tabla de requerimientos que se presentan a los clientes
+
+## Escenarios de uso. 
+Los desarrolladores y usuarios crean una lista de casos de uso para que se sepa como se utiliza y que se debe progtedmr dekl  sitsema.
+
+Varia segun el tamaño del sistema
+
+Productos de trabajo:
+ - enunciado de la necesidad su factibilidad.
+ - enunciado acotado del alcance del sistema 
+• lista de clientes, usuarios y otros participantes 
+• descripción del ambiente técnico del sistema.
+• lista de requerimientos (de preferencia organizados por función) y las
+restricciones del dominio que se aplican a cada uno.
+• Un conjunto de escenarios de uso que dan perspectiva al uso del sistema o
+producto en diferentes condiciones de operación
+
+• Cualquier prototipo desarrollado para definir requerimientos.
+
+## ELABORACIÓN DEL MODELO DE LOS REQUERIMIENTOS
+
+el modelo describe los dominios de informacio, funcion, y comportamiento. Esto se forma a partir del modelo de requerimientos. Cuando se vuelve estable, se puede seguir planificando
+
+## REQUERIMIENTOS DE LAS NEGOCIACIONES
+
+los clienets evalúen la funcionalidad, desempeño y otras características del producto o sistema, y se negocia
+
+## VALIDACIÓN DE LOS REQUERIMIENTOS
+Se hacen paquetes de requerimientos que se desarrollan juntos, y se aseguran que no hayan conflictos, que sean coherentes, se pueden poner a preuba?, falta alguno? 
+
+sean correctamente abstarcto 
