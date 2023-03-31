@@ -1,0 +1,108 @@
+
+Como armar project charter
+
+Se documentan requisitos fundamentales
+Se le autoriza al Project Manajer para manejar los recursos (personas, tiempos, dinero, espacio fisico) necesarios
+
+La aprueba alguien de nivel jerarquico alto
+
+EL PM crea el acta
+
+FORMATO
+
+Descripción narrativa del producto o servicio a ser entregado por el proyecto. Con las siguientes catacteristicas
+- La necesidad del negocio (por qué se necesita el producto o servicio).
+- La descripción del producto (qué características deberá tener).
+- El plan estratégico de la organización (cómo se alinea con los objetivos de la compañía).
+
+
+información necesaria desde el punto de vista del negocio para determinar si el proyecto amerita la inversión.
+Generalmente, dentro de este documento, se evalúa la necesidad del negocio y se desarrolla un análisis costo-beneficio.
+
+
+Se indica si hay algun factor de ambinete negativo
+(conflicto en estandares, infraestructura de la organizacion, las condiciones del mercado, personal disponible o entrenable (contratos extenos necesarios), tolerancia a los riesgos (lista de riesgos y analisis))
+
+- El propósito o justificación del proyecto
+- La identificación del gerente de proyecto asignado y su nivel de autoridad
+- Los requerimientos de alto nivel (grosso modo)
+- El presupuesto preliminar
+- Las fechas de entrega preliminares
+- Los requisitos de aprobación de los requerimientos
+- El sponsor del proyecto que autoriza el acta de constitución
+
+
+LUEGO FORMATO DOCUMENTO APARTE DE LECCIONES APRENDIDAS
+
+
+
+Provee la información necesaria desde el punto de vista del negocio para determinar si el proyecto
+amerita la inversión.
+Generalmente, dentro de este documento, se evalúa la necesidad del negocio y se desarrolla un
+análisis costo-beneficio.
+
+
+LUEGO
+PLAN DE GESTION DEL PROYECTO:
+
+- Los resultados de la adaptación de los procesos (procesos seleccionados y su nivel de
+implementación, descripción de las herramientas y técnicas a utilizar).
+- Cómo se ejecutará y controlará el trabajo.
+- Cómo se cumplirán los objetivos del proyecto.
+- El plan de gestión de cambios en el cual estará documentado cómo se controlarán los cambios.
+- Las métricas de performance.
+- Las necesidades de comunicación entre los interesados.
+- Las reuniones de revisión de estado, contenido y avance del trabajo del proyecto.
+- Las líneas base del proyecto.
+
+- Línea base del cronograma.
+- Línea base del alcance.
+- Línea base de costos.
+
+
+se va a ir actuaizando
+
+
+SOLICITUD DE CAMBIO
+cambios a productos entregables, planes, rpesupuestos, metodos de getion, etc. La pueden hacer TODOS, pero debe luego ser aprobada
+
+Hay que hacer uno de estos para el manejo de faltas
+
+DOCUMENTACIóN DE APRENDIZAGE
+
+sistema de información=drive
+
+Entregables: productos o resultados únicos, verificables y aprobados, producidos para completar un
+proceso
+ej. plano de una casa, maqueta de la casa, y la casa misma
+
+INFROMACION  SOBRE EL RENDIMIENTO: 
+- El estado de los productos entregables.
+- El estado de la implementación para solicitudes de cambio, acciones correctivas, acciones
+preventivas y reparación de defectos.
+- Las estimaciones pronosticadas.
+- El porcentaje informado del trabajo físicamente terminado.
+- El valor de medidas del rendimiento técnico alcanzado.
+- Las fechas de inicio y finalización de las actividades del cronograma.
+
+hitos: hechos relevantes, puntos de infllección
+
+
+ACTUALIZABLES
+- Documento de requerimientos.
+- Registro de riesgos.
+- Registro de interesados.
+- Registro de las solicitudes de cambio.
+y todo el plan de gestion
+
+
+FALTAN REQUERIMIENTOS NO FUNCIONAB
+
+
+Monitoreo constante del proyecto
+
+
+
+
+documento de roles y
+responsabilidades del proyecto

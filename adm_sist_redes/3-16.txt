@@ -1,0 +1,38 @@
+
+# Sistemas operativos
+
+Un sistema operativo es un programa de gran complejidad que le permite al equipo interactuar con el mundo exterior. 
+Todo sistema operativo es un programa pero no todo progeama es un sistema operativo. 
+Una computadora sin un sistema operativo no es mas que un gran complejo de circuitos que poco podrá hacer.
+Cuando un sietma operatico esta activo en una computadora, esta puede realizar varias funciones.
+ - Control de procesos
+ - Administración de memoria 
+ - Administración de entradas y salidas
+ - Sistema de archivos.
+
+## Control de procesos.
+Un proceso puede informalmente entenderse como un programa en ejecucion. Es una unidad de actividad que se caracteriza por la ejecucion de una secuencia de instrucciones, un estado actual y un conjunto de recursos asociados.
+
+## administracion de memoria
+
+Dado que el espacio de memoria no es infinito, hay que administrarlo y asignarlo adecuadamente. En la memoria se alojan instrucciones y datos. Las instrucciones les pertenecen a procesos, aplicaciones, rutinas. Cuando un programa requiere ser ejecutado será ubicado en algun espacio de memoria otoragndole espacio para sus instrucciones y sus variables
+
+## Administracion de entradas y salidas
+
+Las entradas y salidas son aquellos dispositivos por medio de los cuales el sistema operativo se conecta con el exterior.
+
+##Sistema de archivos
+
+Es un conjunto de reglas que determinan el orden y la forma en eque la informacion es almacenada en disco. A momento de ser guardado se procede a dividir el archivo en bloques de informacion. El sistema operativo determina el tamaño de cada bloque y de esta forma decide como draccionar el archivo, se actualiza la lista de archivos y cada bloque tendrá el comienzo y al final información que sirve para el ensamblado de bloques. 
+
+
+# Que es el software libre?
+
+Para que un software sea considerado libre, sus usarios deben tener derecho a:
+ - Utilizar el programa sin restricciones donde quiera, como quiera y para lo que quiera
+ - Estudiar como funciona el programa y si deseean adaptarlo a sus necesidades	
+ - Distribuir copias a cualquier persona
+ - Mejorarlo, publicarlo, y distribuir sus mejoras al publico
+
+El sfotware libre no debe asociarse con el software gratuito, ya que si cumple con los puntos anteriores tambien puede ser comercializado.
+
