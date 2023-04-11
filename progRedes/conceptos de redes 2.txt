@@ -1,0 +1,83 @@
+Cuales son las diferencias entre una Ip privada y una ip pública
+Un dispositivo representado por una IP privada sólo es accesible por dispositivos dentro de esa misma red privada. En cambio, los dispositivos identificados por una IP pública será accesible por todos los dispositivos, en red pública o privada a través de una puerta de enlace.
+
+
+
+Que clases de ip existen y cual es el objeto de su existencia
+Existen IPs de clase A, B y C. Se diferencian en el tamaño de la red a la cual pertenecen. Las de redes de clase A permite hasta 256^3 = 16777214 hosts (dispositivos conectados), que alcanza para cualquier cosa, y son útiles, por ejemplo, en organizaciones grandes y empresas,  pero solo hay 127 de estas, una sola siendo privada. 
+Las de clase C permiten solo 254 hosts, pero existen 2097152 redes diferentes, de las cuales 256 son privadas. Esto es más útil en redes LAN de hogar por ejemplo, que no necesitan altas cantidades de hosts.  
+Las de clase B son una intermedia con 65536 hosts por red y 16 de estas privadas. 
+
+
+
+Que función cumple el protocolo DHCP y como son sus paquetes
+El protocolo DHCP es el que se encarga de asignar direcciones IP a los dispositivos en una red. El servidor DHCP (típicamente de un router) elije un ip libre entre los disponibles y se los asigna a un dispositivo que lo pide. Este intercambio ocurre entre 4 paquetes, uno de descubrimiento, del cliente, uno de oferta del servidor, uno de solicitud del cliente, y uno de reconocimiento del servidor. Todos estos paquetes mantienen la misma estructura, con datos sobre el tipo de operación y conexión al principio, seguidos por ids e ips que se están transmitiendo del cliente y servidor, seguidos por cookies mágicos y opciones. El primer paquete se envía por broadcast.
+
+
+Que información entrega el comando ipconfig y que significa cada dato
+Ipconfig te muestra una lista de conexiones de cada adaptador de red, junto con los detalles: 
+sufijo DNS: (el nombre de dominio que sigue al nombre de la computadora al momento de crear un nombre DNS para el dispositivo)
+direccion IPv6 de el dispositivo (ip de los modernos ya que se estan acabando los IPv4), 
+direccion IPv4 del dispositivo (IPs tradicional, identificador del dispositivo en la capa 3 del modelo osi), 
+la mascara de subred (indica cuantos hosts tiene la subred en la que se encuentra, es un filtro binario donde los 0s son disponibles para hosts)
+ip de la puerta de enlace predeterminada (el dispositivo que permite acceder a una red externa)
+
+
+Para que se utiliza el protocolo DNS y que es la propagación
+El protocolo DNS es el que se utiliza para averiguar el IP correspondiente a un dominio. Existen muchos servidores DNS alrededor del mundo, para que no se sobrecargue alguno, y una vez que se cambia uno, todos los otros tienen que ir adoptando ese cambio. Como los servidores DNS usan un cache para no sobrecargarse entre sí con consultas, si hay un cambio hay que esperar a que se expire el cache de un dominio en el servidor para que se lo vuelvan a consultar a otro, y si el cambio ya fue propagado a este otro servidor se adopta en el actual. Típicamente, en un día alcanza para propagarse a los servidores más importantes del mundo.
+
+Explicar con un ejemplo el proceso de traducción de direcciones llamado NAT
+NAT, que significa traducción de direcciones de red, permite redireccionar paquetes de un dispositivo a otro. Un ejemplo común es usarlo para que un dispositivo de una red privada pueda conectarse con los de una red pública. Cuando este envía un paquete, el router le cambia la cabecera IP y la suma de verificación al paquete al suyo, y cuando recibe la respuesta esta le aplica el proceso inverso. 
+
+Una analogía en la vida real puede ser que una persona manda una carta, y un intermediario le cambia la dirección del envío a la suya y la reenvía. Cuando reciba una carta de respuesta, le cambia la dirección del destinatario a la del enviador original y la reenvía.
+
+
+
+Para qué existen los puertos de capa 4 y que son los well known ports
+Permiten que un dispositivo, usando un mismo protocolo, pueda tener varios servidores y conexiones en paralelo. (O, en el caso del cliente, varias conexiones en paralelo) El sistema operativo dirige cada paquete, según el puerto al que llega (y si no está bloqueado por firewall) a el proceso que está escuchando a ese puerto en ese protocolo. Los well known ports son los puertos desde 0-1023, que están generalmente reservados para ciertos servicios de red bien conocidos y 
+
+
+
+Que se debe modificar en un router si se quiere permitir acceder desde Internet a un servidor Web montado localmente
+Se debe hacer una redirección de puertos (port forwarding), en la cual los paquetes que recibe el router en uno o más puertos se envían a la dirección del servidor. 
+
+
+
+Que es el redireccionamiento de puertos, quien lo determina y porque lo hace
+Es el procedimiento en el cual el router reenvía los paquetes que llegan a ciertos puertos a un dispositivo al que se le asignó para esos. El router hace la redirección. Se hace porque si no las conexiones entrantes quedan bloqueadas por el firewall del router, por temas de seguridad. (Por ejemplo, puede haber una impresora red y no se quiere que sea accesible desde afuera.)
+
+
+Para que se utiliza el protocolo SSH y qué uso se le puede dar en la práctica
+El SSH o Secure shell protocol es un protocolo que permite acceder a la línea de comandos de otro dispositivo remotamente, ya sea usando usuario y contraseña o por llaves gpg, de manera segura y encriptada. Es la herramienta más común para administrar servidores remotamente, pero también puede usarse para transferir archivos (scp), entre otros usos. Se puede usar para hacer túneles ssh cuando tienes una conexión restringida en algún otro protocolo. Está bloqueado en la escuela por esta razón, y para proteger los servidores de la red interna de la escuela.
+
+
+Que es el concepto de tunneling en protocolos
+Un túnel en redes se refiere a encapsular un protocolo dentro de otro, para poderlo enviar en conexiones en las que esté bloqueado o no encriptado. Al hacer esto estás creando una red privada entre los 2 dispositivos, aunque estos estén ubicados en una red pública. Por ejemplo, se podría (hipotéticamente) encapsular SSH en HTTPS, y de esa manera circunvalar el bloqueo de la escuela, y acceder un servidor que está fuera de la red. 
+
+Que es un socket, que operaciones permite y que resuelve cada una
+Los sockets son la interfaz básica, que apareció primero en BSD, a través de la cual la mayoría de los programas manejan las conexiones de red. Se trata de un descriptor de archivo al cual se le escriben los datos a enviar y se leen los recibidos.
+
+Las operaciones son:
+
+socket(), que crea el descriptor de archivo, según los detalles de la conexión en los parámetros (protocolo, versión de IP, etc,) 
+
+bind(), que ejecuta el servidor para asociar al socket con la dirección de IP local, y indica si falla o no.
+
+listen(), que lo prepara para conexiones, y espera a que aparezca alguna
+
+accept(), que acepta la conexión
+
+connect(), que lo corre el cliente para conectarse al servidor 
+
+write() y read() para leer los datos de la conexión
+
+close() para cerrar el socket y terminar la conexión.
+
+También existen varias otras como send(), recv(), sendto() y recvfrom(), como formas alternativas de transferir datos, gethostbyname(), gethostbyaddr(),  getaddrinfo(), freeaddrinfo() y  getsockopt() que permiten ver detalles sobre la conexión y sus participantes, y poll(), select(),   y setsockopt() para ver y modificar el estado actual de la conexión.
+
+
+
+
+
+
+

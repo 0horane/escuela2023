@@ -1,0 +1,75 @@
+Cuales son las principales diferencias entre la Programación orientada a objetos y la programación estructurada
+
+La estructurada se enfoca en el processo lógico de flujo, mientras qye la POO se enfoca en los datos
+El código de POO es facil de reusar y modificar, mientras que la estructurada /tiende/ a ser menos mantenible
+La POO se divide en objetos, mientras que la estructurada se divide en procedimientos y funciones
+
+
+La programación estreucturada se trata de desarrollar un programa utilizando un conjunto de funciones modulares, mientras en la programación orientada a objetos construye programas usando objetos y sus interacciones.
+
+
+Explicar el concepto de clase y dar un ejemplo de declaración en c# y en Java
+
+Una clase es una plantilla para crear una estructura que combina funcionalidad y información. A partir de una clase podemos crear una instancia de un objeto 
+Aca esta la mínima clase valida
+
+//C#
+class Car {
+	public Car(){}
+}
+
+//Java
+class Car {
+	public static void main(String[] args){}
+}
+
+
+
+Cuales son los componentes que puede contener una clase, agregar a la declaración del punto anterior todos los posibles componentes.
+
+Una clase puede tener atributos o propiedades, que son las estructuras dentro de la clase que almacenan los datos, y métodos, que son la funcionalidad del programa, similares a las funciones en la programación estructurada.
+
+ //C#
+class Car {
+	private double peso;
+	
+	public Car(){}
+	
+	public void encender(){
+		Console.WriteLine("*se prende el motor*");
+	}
+}
+
+//Java
+class Car {
+	private double peso;
+	
+	public Car(){}
+
+	public void encender(){
+		System.out.println("*se prende el motor*");
+	}
+}
+
+ 
+ 
+Que es un objeto y como se crea. Dar un ejemplo en C# y Java
+
+Un objeto es una instancia de una clase. Es decir, se crea un espacio en la memoria que contiene todos los datos y funcionalidad.
+
+ //C#
+Car car1 = new Car();
+
+//Java
+Car car1 = new Car();
+
+
+Cuales son las diferencias entre un método y un evento, explicar con un ejemplo
+???????
+Los eventos son un conjunto de métodos que se llaman cuando se cumple una condición. 
+
+Explicar las siguientes términos dentro de clases. Static ,Private, Public, Final.
+Para que se utilizan set y get en las propiedades de las clases , y porque no se asignan directamente.
+Explicar el concepto de herencia y cuando se hace necesario su uso. Dar un ejemplo usando la clase anterior en C# y en Java
+Definir método constructor y en que se diferencia de otros métodos
+Explicar con un ejemplo la sobrecarga de métodos  en particular la utilidad en el método constructor
