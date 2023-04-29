@@ -1,0 +1,9 @@
+Border NAT
+
+para algunas personas no se les dan más IPS públicas y se conectan varios routers en una red privada
+
+
+
+
+
+VPNS reemplazazó a el subneteo por sus muchas ventajas

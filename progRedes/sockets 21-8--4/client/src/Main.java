@@ -1,5 +1,4 @@
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.*;
 import java.net.Socket;
 
 
@@ -9,12 +8,20 @@ public class Main {
 
             Socket sock;
             PrintWriter sockout;
-
+            Console console= System.console();
+            BufferedReader sockin;
             sock = new Socket("localhost", 8080);
-            sockout = new PrintWriter(sock.getOutputStream());
+            sockout = new PrintWriter(sock.getOutputStream(), true);
+            sockin = new BufferedReader(new InputStreamReader(sock.getInputStream()) );
 
-            sockout.println("get real");
-            sockout.flush();
+
+            while (true){
+                sockout.println(console.readLine());
+                System.out.println(sockin.readLine());
+            }
+
+
+            //sockout.flush(); ayutofluch true
 
 
         } catch (IOException e){throw new RuntimeException(e);}

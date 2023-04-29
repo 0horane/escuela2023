@@ -1,7 +1,4 @@
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.PrintWriter;
+import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.Arrays;
@@ -14,17 +11,25 @@ public class Main {
 
             ServerSocket srvsock;
             Socket sock;
-            InputStreamReader sockin;
-            BufferedReader buffer;
+            PrintWriter sockout;
+            BufferedReader sockin;
+            Console console= System.console();
+
             String[][] mat;
             int xpos;
             int ypos;
 
             srvsock = new ServerSocket(8080);
             sock = srvsock.accept();
-            sockin=new InputStreamReader(sock.getInputStream());
-            buffer = new BufferedReader(sockin);
-            System.out.println(buffer.readLine());
+            sockout=new PrintWriter(sock.getOutputStream(), true);
+            sockin = new BufferedReader(new InputStreamReader(sock.getInputStream()));
+
+
+            while (true){
+                System.out.println(sockin.readLine());
+                sockout.println(console.readLine());
+            }
+
             /*
             xpos=4;
             ypos=4;
