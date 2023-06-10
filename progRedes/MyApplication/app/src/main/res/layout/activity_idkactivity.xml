@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".IDKActivity">
+
+    <Button
+        android:id="@+id/buttoncalc2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="19dp"
+        android:layout_marginBottom="48dp"
+        android:text="calc"
+        app:layout_constraintBottom_toTopOf="@+id/accTXT"
+        app:layout_constraintEnd_toStartOf="@+id/buttonmain2"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/buttonmain2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="18dp"
+        android:text="main"
+        app:layout_constraintBaseline_toBaselineOf="@+id/buttoncalc2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/buttoncalc2" />
+
+    <TextView
+        android:id="@+id/accTXT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_marginBottom="26dp"
+        android:text="Accelerometro"
+        app:layout_constraintBottom_toTopOf="@+id/lightTXT"
+        app:layout_constraintStart_toStartOf="@+id/lightTXT" />
+
+    <TextView
+        android:id="@+id/lightTXT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="65dp"
+        android:layout_marginTop="272dp"
+        android:text="Luz"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/distTXT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="21dp"
+        android:text="Distancia"
+        app:layout_constraintStart_toStartOf="@+id/lightTXT"
+        app:layout_constraintTop_toBottomOf="@+id/lightTXT" />
+
+    <!--
+    <ListView
+        android:id="@+id/lv"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttoncalc2" />
+        -->
+</androidx.constraintlayout.widget.ConstraintLayout>
