@@ -8,8 +8,7 @@ def thread_run(conn, datalist, datalist_lock):
         if recvdata==b"":
             print("connection terminated. Exiting...")
             connlist.remove(conn)
-            break
-            #exit()
+            exit()
         print(recvdata.decode())
         datalist_lock.acquire()
         datalist.append(recvdata)

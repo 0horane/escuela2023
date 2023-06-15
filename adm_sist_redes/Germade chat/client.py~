@@ -7,7 +7,7 @@ def thread_run(sock):
         recvval=sock.recv(1024)
         if recvval==b"":
             print("connection terminated. Exiting...")
-            os._exit(0)
+            os.exit(0)
             
         print(recvval.decode())
 
