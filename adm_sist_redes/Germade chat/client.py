@@ -2,6 +2,7 @@ import socket
 import threading
 import os
 
+
 def thread_run(sock):
     while True:
         recvval=sock.recv(1024)
