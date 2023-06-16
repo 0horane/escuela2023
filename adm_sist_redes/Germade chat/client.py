@@ -6,14 +6,14 @@ import os
 def thread_run(sock):
     while True:
         try:
-            recvval=sock.recv(1024)
+            recvval=sock.recv(4096)
         except ConnectionResetError:
             recvval=b""
         if recvval==b"":
             print("connection terminated. Exiting...")
             os._exit(0)
             
-        print(recvval.decode())
+        print(recvval.decode('utf-8'))
 
 sock=socket.socket(family=socket.AF_INET, type=socket.SOCK_STREAM)
 sock.connect(('127.0.0.1', 8080))
