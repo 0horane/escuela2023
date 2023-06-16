@@ -5,7 +5,10 @@ import os
 
 def thread_run(sock):
     while True:
-        recvval=sock.recv(1024)
+        try:
+            recvval=sock.recv(1024)
+        except ConnectionResetError:
+            recvval=b""
         if recvval==b"":
             print("connection terminated. Exiting...")
             os._exit(0)
