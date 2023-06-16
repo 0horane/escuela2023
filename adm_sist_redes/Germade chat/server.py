@@ -4,7 +4,10 @@ import threading
 
 def thread_run(conn, datalist, datalist_lock):
     while True:
-        recvdata=conn.recv(1024)
+        try:
+            recvdata=conn.recv(1024)
+        except ConnectionResetError:
+            recvdata=b""
         if recvdata==b"":
             print("connection terminated. Exiting...")
             connlist.remove(conn)
