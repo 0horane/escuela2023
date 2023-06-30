@@ -1,0 +1,5 @@
+ 1) Realizar un programa que tenga un activity con dos inputtext, dos textviews, y un boton. El primer input corresopnde a un nombre de usario y el segundo a una contraseña. Al hacer clic en el boton se debe validar usario y pwd con dos strings almacenados en el codigo. Previamente se debe verificar que usario y contraseña cumplan con las siguientes condiciones:
+ - El usuario tiene que tener una mayuscula, un número, y no menos que 6 caracteres, idem para lc ontraseña pero con 8 caracteres . En caso de coincidir, debe ir a un activity. En caso de no coincidir, debe mostrar un texto rojo en un textview que esta escondido hasta ese momento.
+ - Debe haber un textview con el nombre nuestro
+ - Debe haber un textview que quedan tres intentos, disminuyendo por cada intento fallido .
+ - Cuando salte al activity del ingreso correcto, ese activity tiene que tener una imagen, dos input, y un boton, y dos textviews. al hacer clic en el boton, debe verificar si el contenido de los inputs es igual, si es asi debe mostrar una imagen y si no otra. 
