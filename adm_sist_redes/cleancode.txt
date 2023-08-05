@@ -1,0 +1,13 @@
+
+ ## CApitulo 3
+ 
+  - Keep functions short! 3'6 lines long is good
+  - Avoid heavy indentation. Call functions in ifs and whiles to mantain readability
+  - Functions do one thing well
+  - extract functions from others if its possible with a name that does not simply restate the implementation [ [[G34]] ]
+  - one level of abstraction per fuction
+  - Follow Single responability principle
+  - Follow Open Closed Principle
+  - place switch statemments in abstract factories as so to not need to reuse them
+  
+	
