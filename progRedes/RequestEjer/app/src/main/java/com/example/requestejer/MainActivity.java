@@ -18,6 +18,7 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -41,11 +42,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        requestButton = findViewById(R.id.requestBtn);
-        jsonRequestButton = findViewById(R.id.jsonRequestButton);
-        resultContainer = findViewById(R.id.resultContainer);
-        containerView = findViewById(R.id.linearLayout);
-
+        initViews();
 
         mRequestQueue= Volley.newRequestQueue(this);
 
@@ -72,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        jsonRequestButton.setOnClickListener(
+        requestButton.setOnClickListener(
             new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -105,7 +102,53 @@ public class MainActivity extends AppCompatActivity {
         );
 
 
+        jsonRequestButton.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        mJsonRequest = new JsonObjectRequest(Request.Method.GET, "https://api.le-systeme-solaire.net/rest/bodies/", null, new Response.Listener<JSONObject>() {
+                            @Override
+                            public void onResponse(JSONObject response) {
+                                JSONArray bodies= null;
+                                try {
+                                    bodies = response.getJSONArray("bodies");
 
+                                    for (int i=0;i<bodies.length();i++){
+                                        JSONObject body = bodies.getJSONObject(i);
+                                        if (body.getBoolean("isPlanet")){
+                                            addTextToListView(
+                                                    body.getString("englishName")
+                                                    + " is "
+                                                    + body.getString("semimajorAxis")
+                                                    + " kilometers away from the sun");
+                                        }
+                                    }
+                                } catch (JSONException e) {
+                                    throw new RuntimeException(e);
+                                }
+
+                            }
+                        }, new Response.ErrorListener() {
+                            @Override
+                            public void onErrorResponse(VolleyError error) {
+
+                            }
+                        });
+                        mRequestQueue.add(mJsonRequest);
+                    }
+                }
+        );
+
+
+
+
+    }
+
+    private void initViews(){
+        requestButton = findViewById(R.id.requestBtn);
+        jsonRequestButton = findViewById(R.id.jsonRequestButton);
+        resultContainer = findViewById(R.id.resultContainer);
+        containerView = findViewById(R.id.linearLayout);
 
     }
 
