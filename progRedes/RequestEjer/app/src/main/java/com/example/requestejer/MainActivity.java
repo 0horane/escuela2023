@@ -141,7 +141,45 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+        ((Button)findViewById(R.id.sss)).setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        mJsonRequest = new JsonObjectRequest(Request.Method.GET, "https://api.le-systeme-solaire.net/rest/bodies/", null, new Response.Listener<JSONObject>() {
+                            @Override
+                            public void onResponse(JSONObject response) {
+                                addTextToListView(recurseJsonObject(response));
 
+                            }
+                        }, new Response.ErrorListener() {
+                            @Override
+                            public void onErrorResponse(VolleyError error) {
+
+                            }
+                        });
+                        mRequestQueue.add(mJsonRequest);
+                    }
+                }
+        );
+
+
+
+
+    }
+
+
+
+
+
+
+
+
+    private String recurseJsonArray(JSONArray arr){
+        return "";
+    }
+
+    private String recurseJsonObject(JSONObject obj){
+        return "";
     }
 
     private void initViews(){
