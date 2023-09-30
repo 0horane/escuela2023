@@ -19,16 +19,16 @@ foreach ($columnsData as $col){
     <?php
     switch ($colType){
         case 'int':
-            ?><input name='<?=$colName?>' type='number'   class="includefor<?=$id?> w-3/4 items-center p-1 m-1 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500"><?php
+            ?><input name='<?=$colName?>' type='number'   class="includeforinsert w-3/4 items-center p-1 m-1 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500"><?php
             break;
         case 'varchar':
-            ?><input name='<?=$colName?>' type='text'  class="includefor<?=$id?> w-3/4 items-center p-1 m-1 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500"><?php
+            ?><input name='<?=$colName?>' type='text'  class="includeforinsert w-3/4 items-center p-1 m-1 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500"><?php
             break;
         case 'datetime':
-            ?><input name='<?=$colName?>' type='datetime-local'  class="includefor<?=$id?> w-3/4 items-center p-1 m-1 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500"><?php
+            ?><input name='<?=$colName?>' type='datetime-local'  class="includeforinsert w-3/4 items-center p-1 m-1 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500"><?php
             break;
         case 'date':
-            ?><input name='<?=$colName?>' type='<?=$colType?>'  class="includefor<?=$id?> w-3/4 items-center p-1 m-1 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500"><?php
+            ?><input name='<?=$colName?>' type='<?=$colType?>'  class="includeforinsert w-3/4 items-center p-1 m-1 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500"><?php
             break;
         default:
             break;

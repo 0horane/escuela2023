@@ -5,24 +5,20 @@ require_once "database.php";
 
 
 
-
-$columnNames = array_map( function($x){return $x["Field"];},  entries("
+$columnAssoc =entries("
 SHOW COLUMNS FROM userdetail
-"));
+");
+$columnNames = array_map( function($x){return $x["Field"];}, $columnAssoc);  
 $idColumnName = "id";
 
-$postVars = [];
+
 foreach ($columnNames as $colName){
-    $postVars[] = ($_POST[$colName] === "" || $colName === $idColumnName) ? null : $_POST[$colName] ;
+    $_POST[$colName] = (($_POST[$colName] === "" && $columnAssoc[$colName]["Null"]!=="NO")  || $colName === $idColumnName) ? null : sanitize($_POST[$colName]) ;
 }
 
-$postVars = array_map("trim", $postVars);
 
-$updatequery="INSERT INTO userdetail VALUES( ";
-foreach ($columnNames as $colName){
-    $updatequery.=" {$_POST[$colName]} , ";
-}
-$updatequery=substr($updatequery, 0,  strlen($updatequery)-2). ') ';
+$updatequery="INSERT INTO userdetail VALUES(null, {$_SESSION['userID']}, '{$_POST['Name']}', '{$_POST['Surname']}', '{$_POST['PhoneNumber']}', '{$_POST['Company']}', '{$_POST['Address']}', '{$_POST['Web']}', '{$_POST['Birthdate']}', '{$_POST['Label']}', '{$_POST['Nick']}' ) ";
+
 qq($updatequery);
 
 

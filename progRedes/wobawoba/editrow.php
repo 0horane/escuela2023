@@ -5,22 +5,21 @@ require_once "database.php";
 $idColumnName = "id";
 $id = $_GET["id"];
 
-$columnsData = entries("SHOW columns FROM $table");
+$columnsData = entries("SHOW columns FROM userdetail");
 $colTypes=[];
 foreach ($columnsData as $col){
     $colTypes[$col['Field']]=explode('(',$col['Type'])[0];
 } 
 
 
-$row = entries("SELECT * FROM userDetail WHERE id = {$id}");
+$row = entries("SELECT * FROM userdetail WHERE id = {$id} AND userID = {$_SESSION['userID']}")[0];
 
 ?>
 
 <tr id='e<?=$id?>'>
     
         <input type='hidden' name='idColumn' value='<?=$idColumnName?>'>
-        <input type='hidden' name='table' value='<?=$table?>'>
-<?php foreach ($colTypes as $colName=>$colType){ ?>
+<?php foreach ($colTypes as $colName=>$colType){  ?>
     <td class="">
     <?php
     switch ($colType){
@@ -47,7 +46,7 @@ $row = entries("SELECT * FROM userDetail WHERE id = {$id}");
     <button hx-post='/changerow.php?id=<?=reset($row)?>' hx-target='#e<?=$id?>' hx-swap='outerHTML' hx-include='.includefor<?=$id?>' class="rounded-md bg-blue-400 p-2">✔</button>
     </td>
     <td class="font-medium py-3.5 px-5 text-gray-700  text-left ">
-    <button hx-post='/resetrow.php?id=<?=reset($row)?>' hx-target='#e<?=$id?>' hx-swap='outerHTML' class="rounded-md bg-blue-400 p-2">✖</button>
+    <button onclick="window.location.reload()" class="rounded-md bg-blue-400 p-2">✖</button>
     
     </td>
     
