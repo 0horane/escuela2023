@@ -5,6 +5,8 @@ require_once "database.php";
 
 
 $columnsData = entries("SHOW columns FROM userdetail");
+$columnsData = array_slice($columnsData, 2);
+
 $colTypes=[];
 foreach ($columnsData as $col){
     $colTypes[$col['Field']]=explode('(',$col['Type'])[0];
@@ -19,6 +21,7 @@ foreach ($columnsData as $col){
     <?php
     switch ($colType){
         case 'int':
+        case 'bigint':
             ?><input name='<?=$colName?>' type='number'   class="includeforinsert w-3/4 items-center p-1 m-1 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500"><?php
             break;
         case 'varchar':

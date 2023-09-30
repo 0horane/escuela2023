@@ -8,6 +8,8 @@ require_once "database.php";
 $columnAssoc =entries("
 SHOW COLUMNS FROM userdetail
 ");
+
+$columnAssoc = array_slice($columnAssoc, 2);
 $columnNames = array_map( function($x){return $x["Field"];}, $columnAssoc);  
 $idColumnName = "id";
 

@@ -7,16 +7,18 @@ if (!isset($_SESSION['userID'])){
 require_once "./database.php";
 
 $rows=entries("
-Select * FROM userdetail WHERE userID =  {$_SESSION['userID']}
+Select Id, Name, Surname, PhoneNumber, Company, Address, Web, Birthdate, Label, Nick FROM userdetail WHERE userID =  {$_SESSION['userID']}
 ");
 
 
-
-
-
-$columnNames = array_map( function($x){return $x["Field"];},  entries("
+$columnAssoc = entries("
 SHOW COLUMNS FROM userdetail
-"));
+");
+$columnAssoc = array_slice($columnAssoc, 2);
+
+
+$columnNames = array_map( function($x){return $x["Field"];},  $columnAssoc);
+
 
 ?>
 
@@ -47,17 +49,17 @@ SHOW COLUMNS FROM userdetail
         </thead>
         <tbody id="rowsbody">
             <?php foreach($rows as $row){ ?>
-            <tr id="r<?=reset($row)?>">
+            <tr id="r<?=$row['Id']?>">
 		        <?php foreach ($columnNames as $column){?>
                 <td class="font-medium py-3.5 px-5 text-gray-700  text-left">
                     <?=$row[$column]?>
                 </td>
 		        <?php } ?>
                 <td class="font-medium py-3.5 px-5 text-gray-700  text-left">
-                <button hx-get='/editrow.php?id=<?=reset($row)?>' hx-target='#r<?=reset($row)?>' hx-swap='outerHTML' class="rounded-md bg-blue-400 p-2">✏️</button>
+                <button hx-get='/editrow.php?id=<?=$row['Id']?>' hx-target='#r<?=$row['Id']?>' hx-swap='outerHTML' class="rounded-md bg-blue-400 p-2">✏️</button>
                 </td>
                 <td class="font-medium py-3.5 px-5 text-gray-700  text-left ">
-                <button hx-get='/deleterow.php?id=<?=reset($row)?>' hx-target='#r<?=reset($row)?>' hx-swap='outerHTML' class="rounded-md bg-blue-400 p-2">❌</button>
+                <button hx-get='/deleterow.php?id=<?=$row['Id']?>' hx-target='#r<?=$row['Id']?>' hx-swap='outerHTML' class="rounded-md bg-blue-400 p-2">❌</button>
                 </td>
 
             </tr>
