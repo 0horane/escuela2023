@@ -1,24 +1,33 @@
 <?php
 require_once "./database.php";
 session_start();
-if (isset( $_SESSION['melones'])){
+if (isset( $_SESSION['userID'])){
     header('Location: ./index.php');
 }
 
 if (isset( $_POST['email']) && isset( $_POST['pwd']) && isset( $_POST['pwd2']) && $_POST['pwd'] === $_POST['pwd2']){
-    $sanitized_email = sanitize($email);
-    $userlst=qq("SELECT * FROM user WHERE email = {$sanitized_email}");
+    $sanitized_email = sanitize($_POST['email']);
+    $userlist=qq("SELECT * FROM user WHERE email = '{$sanitized_email}'");
     if (mysqli_num_rows($userlist) >= 1){
         echo "tremendos zapallos";
     } else {
-        password_hash( sanitize($_POST['pwd']),  PASSWORD_DEFAULT  );
+        $hash = password_hash( sanitize($_POST['pwd']),  PASSWORD_DEFAULT  );
+        /*
         if (password_verify($user["password"], $_POST['pwd'] )){
-            //$_SESSION['melones'] = $user["id"];
+            //$_SESSION['userID'] = $user["id"];
             //header('Location: ./index.php');
             //FINISH REGISTER
         } else {
             echo "contra incorrcta";
         }
+        */
+        qq("INSERT INTO user VALUES (null, '$sanitized_email', '$hash', null, NOW(), NOW(), null)");
+        header("Location: ./index.php");
+        ?>
+        <script>
+            window.location.href="./index.php";
+        </script>
+        <?php
     }
 
     
@@ -58,7 +67,7 @@ if (isset( $_POST['email']) && isset( $_POST['pwd']) && isset( $_POST['pwd2']) &
         <h1>Página de rehistrarse</h1>
         <br>
         
-        <form>
+        <form method="post">
             <label for="email">Mail</label><br>
             <input name="email" type="email"> <br>
             <label for="pwd">Contraseña</label><br>

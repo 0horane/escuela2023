@@ -1,19 +1,19 @@
 <?php
 require_once "./database.php";
 session_start();
-if (isset( $_SESSION['melones'])){
+if (isset( $_SESSION['userID'])){
     header('Location: ./index.php');
 }
 
 if (isset( $_POST['email']) && isset( $_POST['pwd'])){
-    $sanitized_email = sanitize($email);
-    $userlst=qq("SELECT * FROM user WHERE email = {$sanitized_email}");
+    $sanitized_email = sanitize($_POST['email']);
+    $userlist=qq("SELECT * FROM user WHERE email = '{$sanitized_email}'");
     if (mysqli_num_rows($userlist) != 1){
         echo "tremendos zapallos";
     } else {
-        $user = $qq->fetch_assoc();
-        if (password_verify($user["password"], sanitize($_POST['pwd'] ))){
-            $_SESSION['melones'] = $user["id"];
+        $user = $userlist->fetch_assoc();
+        if (password_verify($_POST['pwd'], $user["password"] )){
+            $_SESSION['userID'] = $user["id"];
             header('Location: ./index.php');
         } else {
             echo "contra incorrcta";
@@ -56,8 +56,12 @@ if (isset( $_POST['email']) && isset( $_POST['pwd'])){
     <div class="brungus">
         <h1>Página de logueo</h1>
         <br>
+        <span>No tenes cuenta? <a href="./registrarse.php">registrate</a></span>
+        <br>
+        <br>
+        <br>
         
-        <form>
+        <form method="post">
             <label for="email">Mail</label><br>
             <input name="email" type="email"> <br>
             <label for="pwd">Contraseña</label><br>
